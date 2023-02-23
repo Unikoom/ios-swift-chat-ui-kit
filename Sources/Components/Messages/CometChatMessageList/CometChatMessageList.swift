@@ -924,7 +924,7 @@ import CometChatPro
         tableView.backgroundColor = .clear
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(loadPreviousMessages), for: .valueChanged)
-        tableView?.refreshControl = refreshControl
+        //tableView?.refreshControl = refreshControl
                 //self.tableView.conte.set(background: [CometChatTheme.palatte?.background?.cgColor ?? UIColor.systemBackground.cgColor])
     }
     
