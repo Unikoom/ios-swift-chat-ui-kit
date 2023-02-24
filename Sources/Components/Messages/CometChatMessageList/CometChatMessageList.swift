@@ -662,7 +662,7 @@ import CometChatPro
             })
         case .group:
             
-            self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).set(timeStamp: 1645698215).build()
+            self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).setUpdatedAfter(timeStamp: 1645698215).updatesOnly(onlyUpdates: true).build()
             
             messageRequest?.fetchPrevious(onSuccess: {[weak self] (fetchedMessages) in
                 guard let strongSelf = self else { return }
