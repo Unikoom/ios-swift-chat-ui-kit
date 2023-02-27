@@ -670,7 +670,7 @@ import CometChatPro
             })
         case .group:
             
-            if isSortedByOldersMessage {
+            if isSortedByOldestMessage {
                 self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).setUpdatedAfter(timeStamp: oldestMessageTimestamp).updatesOnly(onlyUpdates: true).build()
             } else {
                 self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).build()
@@ -678,7 +678,7 @@ import CometChatPro
             
 //            self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).setUpdatedAfter(timeStamp: 1645698215).updatesOnly(onlyUpdates: true).build()
             
-            var handleSuccessResponse = { [weak self] fetchedMessages in
+            var handleSuccessResponse: ([BaseMessage]?) -> Void = { [weak self] fetchedMessages in
                 guard let strongSelf = self else { return }
                 guard let messages = fetchedMessages else { return }
                 if fetchedMessages?.count != 0 && messages.count == 0 {
@@ -703,7 +703,7 @@ import CometChatPro
                 }
             }
             
-            var handleFailureResponse = { [weak self] error in
+            var handleFailureResponse: (CometChatException?) -> Void = { [weak self] error in
                 if let error = error , !self.hideError {
                     let confirmDialog = CometChatDialog()
                     confirmDialog.set(confirmButtonText: "TRY_AGAIN".localize())
