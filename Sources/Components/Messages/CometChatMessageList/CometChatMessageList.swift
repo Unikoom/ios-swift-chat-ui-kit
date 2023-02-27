@@ -91,7 +91,7 @@ import CometChatPro
     
     @discardableResult
     @objc public func set(sortByOldestMessages: Bool, fromTimestamp timestamp: Int) -> Self {
-        self.isSortedByOldersMessage = sortByOldestMessages
+        self.isSortedByOldestMessage = sortByOldestMessages
         self.oldestMessageTimestamp = timestamp
         return self
     }
@@ -678,7 +678,7 @@ import CometChatPro
             
 //            self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).setUpdatedAfter(timeStamp: 1645698215).updatesOnly(onlyUpdates: true).build()
             
-            var handleSuccessResponse: ([BaseMessage]?) -> Void = { [weak self] fetchedMessages in
+            let handleSuccessResponse: ([BaseMessage]?) -> Void = { [weak self] fetchedMessages in
                 guard let strongSelf = self else { return }
                 guard let messages = fetchedMessages else { return }
                 if fetchedMessages?.count != 0 && messages.count == 0 {
@@ -703,7 +703,8 @@ import CometChatPro
                 }
             }
             
-            var handleFailureResponse: (CometChatException?) -> Void = { [weak self] error in
+            let handleFailureResponse: (CometChatException?) -> Void = { [weak self] error in
+                guard let self = self else { return }
                 if let error = error , !self.hideError {
                     let confirmDialog = CometChatDialog()
                     confirmDialog.set(confirmButtonText: "TRY_AGAIN".localize())
