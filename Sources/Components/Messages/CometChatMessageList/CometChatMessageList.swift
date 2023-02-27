@@ -38,7 +38,7 @@ import CometChatPro
     var messagetTypeTemplates: [CometChatMessageTemplate] = [CometChatMessageTemplate]()
     var limit: Int = 20
     var oldestMessageTimestamp: Int = 0
-    var isSortedByOldestMessage: Bool
+    var isSortedByOldestMessage: Bool = false
     var searchKeyword: String = ""
     var status: CometChat.UserStatus = .offline
     var friendsOnly: Bool = false
