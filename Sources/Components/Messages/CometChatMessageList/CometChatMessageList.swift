@@ -46,6 +46,7 @@ import CometChatPro
     var hideMessagesFromBlockedUsers: Bool = false
     var hideDeletedMessages: Bool = false
     var hideThreadReplies: Bool = false
+    var hideRefreshControl: Bool = false
     var scrollToBottomOnNewMessage: Bool = true
     var showEmojiInLargerSize: Bool = true
     var hideError: Bool = false
@@ -112,6 +113,13 @@ import CometChatPro
         self.hideDeletedMessages = deletedMessages
         return self
     }
+    
+    @discardableResult
+    public func hide(refreshControl hidden: Bool) -> Self {
+        self.hideRefreshControl = hidden
+        return self
+    }
+    
     @discardableResult
     public func hide(threadedReplies: Bool) -> Self {
         self.hideThreadReplies = threadedReplies
@@ -993,8 +1001,11 @@ import CometChatPro
         tableView.backgroundColor = .clear
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(loadPreviousMessages), for: .valueChanged)
-        //tableView?.refreshControl = refreshControl
-                //self.tableView.conte.set(background: [CometChatTheme.palatte?.background?.cgColor ?? UIColor.systemBackground.cgColor])
+        
+        if !hideRefreshControl {
+            tableView?.refreshControl = refreshControl
+            self.tableView.conte.set(background: [CometChatTheme.palatte?.background?.cgColor ?? UIColor.systemBackground.cgColor])
+        }
     }
     
     fileprivate func registerCells() {
