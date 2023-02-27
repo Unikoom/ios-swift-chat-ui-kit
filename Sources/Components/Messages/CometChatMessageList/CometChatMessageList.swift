@@ -1004,8 +1004,8 @@ import CometChatPro
         
         if !hideRefreshControl {
             tableView?.refreshControl = refreshControl
-            self.tableView.conte.set(background: [CometChatTheme.palatte?.background?.cgColor ?? UIColor.systemBackground.cgColor])
         }
+//        self.tableView.conte.set(background: [CometChatTheme.palatte?.background?.cgColor ?? UIColor.systemBackground.cgColor])
     }
     
     fileprivate func registerCells() {
