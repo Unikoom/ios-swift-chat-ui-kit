@@ -724,13 +724,13 @@ import CometChatPro
             
             if isSortedByOldestMessage {
                 messageRequest?.fetchNext(onSuccess: { [weak self] (fetchedMessages) in
-                    handleSuccessResponce(fetchedMessages)
+                    handleSuccessResponse(fetchedMessages)
                 }, onError: { (error) in
                     handleFailureResponse(error)
                 })
             } else {
                 messageRequest?.fetchPrevious(onSuccess: { [weak self] (fetchedMessages) in
-                    handleSuccessResponce(fetchedMessages)
+                    handleSuccessResponse(fetchedMessages)
     //                guard let strongSelf = self else { return }
     //                guard let messages = fetchedMessages else { return }
     //                if fetchedMessages?.count != 0 && messages.count == 0 {
