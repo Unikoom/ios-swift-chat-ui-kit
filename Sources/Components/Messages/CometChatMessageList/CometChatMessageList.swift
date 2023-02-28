@@ -684,8 +684,6 @@ import CometChatPro
                 self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).build()
             }
             
-//            self.messageRequest = MessagesRequest.MessageRequestBuilder().set(guid: forID).set(categories: messageCategories).set(types: messageTypes).hideReplies(hide: true).hideDeletedMessages(hide: hideDeletedMessages).set(unread: onlyUnreadMessages).hideMessagesFromBlockedUsers(hideMessagesFromBlockedUsers).setTags(tags).set(limit: limit).setUpdatedAfter(timeStamp: 1645698215).updatesOnly(onlyUpdates: true).build()
-            
             let handleSuccessResponse: ([BaseMessage]?) -> Void = { [weak self] fetchedMessages in
                 guard let strongSelf = self else { return }
                 guard let messages = fetchedMessages else { return }
@@ -739,45 +737,8 @@ import CometChatPro
             } else {
                 messageRequest?.fetchPrevious(onSuccess: { [weak self] (fetchedMessages) in
                     handleSuccessResponse(fetchedMessages)
-    //                guard let strongSelf = self else { return }
-    //                guard let messages = fetchedMessages else { return }
-    //                if fetchedMessages?.count != 0 && messages.count == 0 {
-    //                    if let request = strongSelf.messageRequest {
-    //                        self?.fetchPreviousMessages(messageReq: request)
-    //                    }
-    //                }
-    //                strongSelf.groupMessages(messages: messages)
-    //                guard let lastMessage = messages.last else { return }
-    //                CometChat.markAsRead(baseMessage: lastMessage)
-    //                strongSelf.messages.append(contentsOf: messages)
-    //                DispatchQueue.main.async {
-    //
-    //                    if let currentGroup = strongSelf.currentGroup , let textMessage = lastMessage as? TextMessage {
-    //                        strongSelf.smartReplies.set(message: textMessage)
-    //                            .set(group: currentGroup)
-    //                    }else{
-    //                        strongSelf.smartReplies.isHidden = true
-    //                    }
-    //                    strongSelf.tableView?.reloadData()
-    //                    strongSelf.scrollToBottom()
-    //                }
                 }, onError: { (error) in
                     handleFailureResponse(error)
-    //                if let error = error , !self.hideError {
-    //                    let confirmDialog = CometChatDialog()
-    //                    confirmDialog.set(confirmButtonText: "TRY_AGAIN".localize())
-    //                    confirmDialog.set(cancelButtonText: "CANCEL".localize())
-    //                    if self.errorStateText.isEmpty {
-    //                        confirmDialog.set(error: CometChatServerError.get(error: error))
-    //                    }else{
-    //                        confirmDialog.set(messageText: self.errorStateText)
-    //                    }
-    //                    confirmDialog.open(onConfirm: { [weak self] in
-    //                        guard let strongSelf = self else { return }
-    //                        // Referesh list
-    //                        strongSelf.tableView.reloadData()
-    //                    })
-    //                }
                 })
             }
             
