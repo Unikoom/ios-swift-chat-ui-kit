@@ -8,8 +8,8 @@
 import UIKit
 import CometChatPro
 
-@objc public protocol CometChatMessageListDelegate: AnyObject {
-    @objc func messageListWillBeginDragging(_ messageList: CometChatMessageList)
+public protocol CometChatMessageListDelegate: AnyObject {
+    func messageListWillBeginDragging(_ messageList: CometChatMessageList)
 }
 
 @objc @IBDesignable public class CometChatMessageList: UIView  {
@@ -276,9 +276,8 @@ import CometChatPro
     }
     
     @discardableResult
-    @objc public func set(delegate: CometChatMessageListDelegate) -> CometChatMessageList {
+    public func set(delegate: CometChatMessageListDelegate) {
         self.delegate = delegate
-        return self
     }
     
     @discardableResult
