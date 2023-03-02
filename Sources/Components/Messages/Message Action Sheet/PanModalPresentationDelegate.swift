@@ -34,14 +34,14 @@ import UIKit
     /**
      Returns a modal presentation animator configured for the presenting state
      */
-   @objc  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+   @objc public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PanModalPresentationAnimator(transitionStyle: .presentation)
     }
 
     /**
      Returns a modal presentation animator configured for the dismissing state
      */
-  @objc   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  @objc public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PanModalPresentationAnimator(transitionStyle: .dismissal)
     }
 
@@ -51,7 +51,7 @@ import UIKit
 
      Changes in size class during presentation are handled via the adaptive presentation delegate
      */
-  @objc   func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+  @objc public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let controller = PanModalPresentationController(presentedViewController: presented, presenting: presenting)
         controller.delegate = self
         return controller
@@ -73,7 +73,7 @@ import UIKit
     /**
      Dismisses the presented view controller
      */
-  @objc   func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+  @objc public func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
     }
 
