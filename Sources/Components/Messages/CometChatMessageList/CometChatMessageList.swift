@@ -9,7 +9,7 @@ import UIKit
 import CometChatPro
 
 @objc public protocol CometChatMessageListDelegate: AnyObject {
-    func messageListWillBeginDragging(_ messageList: CometChatMessageList)
+    @objc func messageListWillBeginDragging(_ messageList: CometChatMessageList)
 }
 
 @objc @IBDesignable public class CometChatMessageList: UIView  {
