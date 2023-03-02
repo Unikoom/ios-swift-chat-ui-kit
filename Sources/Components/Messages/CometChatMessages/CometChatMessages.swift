@@ -221,7 +221,7 @@ open class CometChatMessages: UIViewController {
 
 extension CometChatMessages: CometChatMessageOptionDelegate {
     
-    func onItemClick(messageOption: CometChatMessageOption, forMessage: BaseMessage?, indexPath: IndexPath?) {
+    public func onItemClick(messageOption: CometChatMessageOption, forMessage: BaseMessage?, indexPath: IndexPath?) {
         if let message = forMessage {
             switch messageOption.id {
             case UIKitConstants.MessageOptionConstants.editMessage :
