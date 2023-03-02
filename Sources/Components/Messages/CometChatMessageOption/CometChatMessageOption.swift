@@ -100,7 +100,7 @@ public class  CometChatMessageOption : Hashable {
     }
     
     
-    static var messageOptionDelegate: CometChatMessageOptionDelegate?
+    static public var messageOptionDelegate: CometChatMessageOptionDelegate?
     
     let id: String
     let title: String
