@@ -8,6 +8,9 @@
 import UIKit
 import CometChatPro
 
+protocol CometChatMessageListDelegate: AnyObject {
+    func messageListWillBeginDragging(_ messageList: CometChatMessageList)
+}
 
 @objc @IBDesignable public class CometChatMessageList: UIView  {
     
@@ -32,6 +35,7 @@ import CometChatPro
     var isAnimating = false
     var currentReaction: LiveReaction = .heart
     weak var controller: UIViewController?
+    weak var delegate: CometChatMessageListDelegate?
     var customViews: [String: ((_ message: BaseMessage) -> (UIView))?] = [:]
     var messagesConfigurations: MessageListConfiguration?
     var messageOptions:[String: [CometChatMessageOption]] = [String: [CometChatMessageOption]]()
@@ -268,6 +272,12 @@ import CometChatPro
     @discardableResult
     @objc public func set(controller: UIViewController) -> CometChatMessageList {
         self.controller = controller
+        return self
+    }
+    
+    @discardableResult
+    @objc public func set(delegate: CometChatMessageListDelegate) -> CometChatMessageList {
+        self.delegate = delegate
         return self
     }
     
@@ -1082,11 +1092,7 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UISc
     }
 
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        let contentOffset = scrollView.contentOffset.y
-    }
-    
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffset = scrollView.contentOffset.y
+        delegate?.messageListWillBeginDragging(self)
     }
     
 }
