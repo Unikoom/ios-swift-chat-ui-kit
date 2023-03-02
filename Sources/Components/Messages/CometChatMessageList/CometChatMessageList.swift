@@ -9,7 +9,7 @@ import UIKit
 import CometChatPro
 
 public protocol CometChatMessageListDelegate: AnyObject {
-    func messageListWillBeginDragging()
+    func messageListWillBeginDragging(messageList: CometChatMessageList)
 }
 
 @objc @IBDesignable public class CometChatMessageList: UIView  {
@@ -276,8 +276,9 @@ public protocol CometChatMessageListDelegate: AnyObject {
     }
     
     @discardableResult
-    public func set(delegate: CometChatMessageListDelegate) {
+    public func set(delegate: CometChatMessageListDelegate) -> CometChatMessageList {
         self.delegate = delegate
+        return self
     }
     
     @discardableResult
@@ -1091,7 +1092,7 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UISc
     }
 
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        delegate?.messageListWillBeginDragging()
+        delegate?.messageListWillBeginDragging(messageList: self)
     }
     
 }
