@@ -992,7 +992,7 @@ import CometChatPro
 }
 
 
-extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource {
+extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         if chatMessages.isEmpty {
@@ -1039,7 +1039,7 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource {
     public  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let section = indexPath.section as? Int else { return UITableViewCell() }
@@ -1079,7 +1079,16 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource {
                 return cell
               }
         return UITableViewCell()
-      }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset.y
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset.y
+    }
+    
 }
 
 extension CometChatMessageList: CometChatEmojiKeyboardDelegate {
