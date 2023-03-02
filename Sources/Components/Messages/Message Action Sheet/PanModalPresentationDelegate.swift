@@ -18,12 +18,12 @@ import UIKit
  viewController.transitioningDelegate = PanModalPresentationDelegate.default
  ```
  */
-@objc  class PanModalPresentationDelegate: NSObject {
+@objc public class PanModalPresentationDelegate: NSObject {
 
     /**
      Returns an instance of the delegate, retained for the duration of presentation
      */
-   @objc  static var default1: PanModalPresentationDelegate = {
+   @objc public static var default1: PanModalPresentationDelegate = {
         return PanModalPresentationDelegate()
     }()
 
