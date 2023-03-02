@@ -15,7 +15,7 @@ public enum OptionFor {
     case both
 }
 
-protocol CometChatMessageOptionDelegate: AnyObject {
+public protocol CometChatMessageOptionDelegate: AnyObject {
   func onItemClick(messageOption: CometChatMessageOption, forMessage: BaseMessage?, indexPath: IndexPath?)
 }
 
