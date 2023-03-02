@@ -8,7 +8,7 @@
 import UIKit
 import CometChatPro
 
-@objc protocol CometChatMessageListDelegate: AnyObject {
+@objc public protocol CometChatMessageListDelegate: AnyObject {
     func messageListWillBeginDragging(_ messageList: CometChatMessageList)
 }
 
