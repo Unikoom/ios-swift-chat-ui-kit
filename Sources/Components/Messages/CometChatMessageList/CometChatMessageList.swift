@@ -1081,11 +1081,11 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UISc
         return UITableViewCell()
     }
 
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset.y
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset.y
     }
     
