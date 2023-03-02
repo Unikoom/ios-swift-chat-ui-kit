@@ -1091,7 +1091,7 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UISc
     }
 
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        delegate?.messageListWillBeginDragging(self)
+        delegate?.messageListWillBeginDragging()
     }
     
 }
