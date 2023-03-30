@@ -78,6 +78,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
     @discardableResult
     @objc public func set(configuration: CometChatConfiguration) -> Self {
         self.configuration = configuration
+        configureMessageList()
         return self
     }
     
@@ -1064,8 +1065,8 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UISc
               if let configurations = configurations {
                 cell.set(configurations: configurations)
                 cell.customViews = self.customViews
-                cell.set(allMessageOptions: messageOptions)
               }
+              cell.set(allMessageOptions: messageOptions)
               if let controller = controller {
                 cell.set(controller: controller)
               }
@@ -1078,8 +1079,8 @@ extension CometChatMessageList: UITableViewDelegate, UITableViewDataSource, UISc
                 if let configurations = configurations {
                   cell.set(configurations: configurations)
                   cell.customViews = self.customViews
-                  cell.set(allMessageOptions: messageOptions)
                 }
+                cell.set(allMessageOptions: messageOptions)
                 if let controller = controller {
                   cell.set(controller: controller)
                 }
