@@ -377,6 +377,12 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
         self.linkPreview.isHidden = true
         self.textMessageStackView.isHidden = false
         
+        let isOwnMessage = message.sender?.uid == CometChat.getLoggedInUser()?.uid
+        var maxBackgroundViewWidth = isOwnMessage
+                                        ? UIScreen.main.bounds.width * 0.9
+                                        : UIScreen.main.bounds.width * 0.8
+        backgroundViewWidthConstraint.constant = maxBackgroundViewWidth
+        
         let phoneParser1 = HyperlinkType.custom(pattern: RegexParser.phonePattern1)
         let phoneParser2 = HyperlinkType.custom(pattern: RegexParser.phonePattern2)
         let emailParser = HyperlinkType.custom(pattern: RegexParser.emailPattern)
@@ -562,12 +568,15 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
         let widthM = message.text.capitalized.width(22, font: CometChatTheme.typography!.Body) + 30.0
         print(widthM)
         
-        let maxWidth = UIScreen.main.bounds.width * 0.8
+        let isOwnMessage = message.sender?.uid == CometChat.getLoggedInUser()?.uid
+        var maxReactionViewWidth = isOwnMessage
+                                        ? UIScreen.main.bounds.width * 0.9
+                                        : UIScreen.main.bounds.width * 0.8
         
-        if widthM < 400 {
+        if widthM < maxReactionViewWidth {
             if count >= 5 {
                 widthReactions.isActive = true
-                widthReactions.constant = 400
+                widthReactions.constant = maxReactionViewWidth
             }
             else if count < 5 && count > 0 {
                 let widthR =  count * 45
@@ -578,7 +587,7 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
             }
         } else {
             widthReactions.isActive = true
-            widthReactions.constant = 400
+            widthReactions.constant = maxReactionViewWidth
         }
         
         let numberOfItemInARow = 5
