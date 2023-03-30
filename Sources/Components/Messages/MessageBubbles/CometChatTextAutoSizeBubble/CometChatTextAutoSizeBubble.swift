@@ -568,7 +568,6 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
         let widthM = message.text.capitalized.width(22, font: CometChatTheme.typography!.Body) + 30.0
         print(widthM)
         
-        let isOwnMessage = message.sender?.uid == CometChat.getLoggedInUser()?.uid
         var maxReactionViewWidth = isOwnMessage
                                         ? UIScreen.main.bounds.width * 0.9
                                         : UIScreen.main.bounds.width * 0.8
