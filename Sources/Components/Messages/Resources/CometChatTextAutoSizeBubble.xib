@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -128,24 +127,24 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUy-Vx-lO7">
-                                                                        <rect key="frame" x="0.0" y="11" width="208" height="12"/>
+                                                                        <rect key="frame" x="0.0" y="11" width="208" height="11.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="sitename.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewd-Rg-UoO">
-                                                                        <rect key="frame" x="0.0" y="23" width="208" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="22.5" width="208" height="16"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nry-xj-orj">
-                                                                        <rect key="frame" x="0.0" y="39" width="208" height="208"/>
+                                                                        <rect key="frame" x="0.0" y="38.5" width="208" height="208.5"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-Fl-u1z">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="2.5" height="208"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="2.5" height="208.5"/>
                                                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="2.5" id="cPy-Jq-ZPa"/>
@@ -157,7 +156,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOg-mr-q6b" customClass="HyperlinkLabel" customModule="CometChatUIKit">
-                                                                                <rect key="frame" x="9.5" y="7" width="191.5" height="194"/>
+                                                                                <rect key="frame" x="9.5" y="7" width="191.5" height="194.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -278,7 +277,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="fap-b3-pKe" secondAttribute="bottom" constant="10" id="Ro2-DG-rdF"/>
                                                             <constraint firstAttribute="trailing" secondItem="hkB-ze-rZC" secondAttribute="trailing" constant="15" id="SKz-bg-wMr"/>
                                                             <constraint firstItem="J3x-RN-y1Z" firstAttribute="top" secondItem="llx-2M-L9R" secondAttribute="top" id="WTb-3A-NFy"/>
-                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="228" id="ZXl-zu-JJf"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ZXl-zu-JJf"/>
                                                             <constraint firstItem="hkB-ze-rZC" firstAttribute="leading" secondItem="fap-b3-pKe" secondAttribute="trailing" id="e5e-Jd-PfN"/>
                                                             <constraint firstItem="J3x-RN-y1Z" firstAttribute="leading" secondItem="llx-2M-L9R" secondAttribute="leading" id="uM5-qd-nsG"/>
                                                             <constraint firstAttribute="bottom" secondItem="J3x-RN-y1Z" secondAttribute="bottom" id="w4J-cj-fiM"/>
@@ -412,26 +411,6 @@
             <point key="canvasLocation" x="364.49275362318843" y="204.24107142857142"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="7zA-1Y-N7O">
-            <size key="intrinsicContentSize" width="24" height="24"/>
-        </designable>
-        <designable name="HOj-xr-xyC">
-            <size key="intrinsicContentSize" width="30" height="13.5"/>
-        </designable>
-        <designable name="WOg-mr-q6b">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="bKi-wd-Hkk">
-            <size key="intrinsicContentSize" width="240" height="240"/>
-        </designable>
-        <designable name="fap-b3-pKe">
-            <size key="intrinsicContentSize" width="46" height="23"/>
-        </designable>
-        <designable name="sxf-vK-lif">
-            <size key="intrinsicContentSize" width="34" height="16"/>
-        </designable>
-    </designables>
     <resources>
         <image name="default-image" width="720" height="405"/>
         <image name="defaultAvatar.jpg" width="240" height="240"/>
