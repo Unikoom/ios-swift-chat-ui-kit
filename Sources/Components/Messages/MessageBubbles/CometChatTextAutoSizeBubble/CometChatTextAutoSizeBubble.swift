@@ -39,6 +39,7 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
     @IBOutlet weak var textMessageStackView: UIStackView!
     @IBOutlet weak var linkPreviewMessage: HyperlinkLabel!
     @IBOutlet weak var avatarWidth: NSLayoutConstraint!
+    @IBOutlet weak var backgroundViewWidthConstraint: NSLayoutConstraint!
     
     //var messageListAlignment: MessageAlignment = .standard
     var indexPath: IndexPath?
@@ -563,10 +564,10 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
         
         let maxWidth = UIScreen.main.bounds.width * 0.8
         
-        if widthM < 100 {
+        if widthM < 400 {
             if count >= 5 {
                 widthReactions.isActive = true
-                widthReactions.constant = 100
+                widthReactions.constant = 400
             }
             else if count < 5 && count > 0 {
                 let widthR =  count * 45
@@ -577,7 +578,7 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
             }
         } else {
             widthReactions.isActive = true
-            widthReactions.constant = 100
+            widthReactions.constant = 400
         }
         
         let numberOfItemInARow = 5

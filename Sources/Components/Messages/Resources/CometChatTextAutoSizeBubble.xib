@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -277,7 +278,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="fap-b3-pKe" secondAttribute="bottom" constant="10" id="Ro2-DG-rdF"/>
                                                             <constraint firstAttribute="trailing" secondItem="hkB-ze-rZC" secondAttribute="trailing" constant="15" id="SKz-bg-wMr"/>
                                                             <constraint firstItem="J3x-RN-y1Z" firstAttribute="top" secondItem="llx-2M-L9R" secondAttribute="top" id="WTb-3A-NFy"/>
-                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ZXl-zu-JJf"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="ZXl-zu-JJf"/>
                                                             <constraint firstItem="hkB-ze-rZC" firstAttribute="leading" secondItem="fap-b3-pKe" secondAttribute="trailing" id="e5e-Jd-PfN"/>
                                                             <constraint firstItem="J3x-RN-y1Z" firstAttribute="leading" secondItem="llx-2M-L9R" secondAttribute="leading" id="uM5-qd-nsG"/>
                                                             <constraint firstAttribute="bottom" secondItem="J3x-RN-y1Z" secondAttribute="bottom" id="w4J-cj-fiM"/>
@@ -384,6 +385,7 @@
                 <outlet property="avatar" destination="bKi-wd-Hkk" id="DSX-8y-Wno"/>
                 <outlet property="avatarWidth" destination="I3a-KW-wqH" id="gjE-jR-z1S"/>
                 <outlet property="background" destination="llx-2M-L9R" id="kwc-E2-FqH"/>
+                <outlet property="backgroundViewWidthConstraint" destination="ZXl-zu-JJf" id="VtP-8O-Qe6"/>
                 <outlet property="containerStackView" destination="Isa-W2-SkO" id="mSw-t7-hbe"/>
                 <outlet property="heightReactions" destination="L0R-Zr-m5E" id="WKE-q3-5K6"/>
                 <outlet property="leadingReplyButton" destination="Gg2-qA-qSv" id="GMJ-hx-5lE"/>
@@ -411,6 +413,26 @@
             <point key="canvasLocation" x="364.49275362318843" y="204.24107142857142"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="7zA-1Y-N7O">
+            <size key="intrinsicContentSize" width="24" height="24"/>
+        </designable>
+        <designable name="HOj-xr-xyC">
+            <size key="intrinsicContentSize" width="30" height="13.5"/>
+        </designable>
+        <designable name="WOg-mr-q6b">
+            <size key="intrinsicContentSize" width="37.5" height="18"/>
+        </designable>
+        <designable name="bKi-wd-Hkk">
+            <size key="intrinsicContentSize" width="240" height="240"/>
+        </designable>
+        <designable name="fap-b3-pKe">
+            <size key="intrinsicContentSize" width="46" height="23"/>
+        </designable>
+        <designable name="sxf-vK-lif">
+            <size key="intrinsicContentSize" width="34" height="16"/>
+        </designable>
+    </designables>
     <resources>
         <image name="default-image" width="720" height="405"/>
         <image name="defaultAvatar.jpg" width="240" height="240"/>
