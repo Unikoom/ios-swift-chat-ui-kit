@@ -412,7 +412,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
                                    UIKitConstants.MessageTypeConstants.text,
                                    UIKitConstants.MessageTypeConstants.audio,
                                    UIKitConstants.MessageTypeConstants.file,
-                                   UIKitConstants.MessageTypeConstants.groupMember,
+                                   /*UIKitConstants.MessageTypeConstants.groupMember,*/
                                    UIKitConstants.MessageTypeConstants.poll,
                                    UIKitConstants.MessageTypeConstants.whiteboard,
                                    UIKitConstants.MessageTypeConstants.document,
