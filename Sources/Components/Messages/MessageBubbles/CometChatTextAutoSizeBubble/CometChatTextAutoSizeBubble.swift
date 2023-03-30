@@ -561,10 +561,10 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
         let widthM = message.text.capitalized.width(22, font: CometChatTheme.typography!.Body) + 30.0
         print(widthM)
         
-        if widthM < 228 {
+        if widthM < 100 {
             if count >= 5 {
                 widthReactions.isActive = true
-                widthReactions.constant = 228
+                widthReactions.constant = 100
             }
             else if count < 5 && count > 0 {
                 let widthR =  count * 45
@@ -575,7 +575,7 @@ public  class CometChatTextAutoSizeBubble: UITableViewCell, MFMailComposeViewCon
             }
         } else {
             widthReactions.isActive = true
-            widthReactions.constant = 228
+            widthReactions.constant = 100
         }
         
         let numberOfItemInARow = 5
