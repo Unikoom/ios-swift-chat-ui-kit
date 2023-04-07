@@ -21,7 +21,7 @@ extension CometChatMessageList: CometChatMessageDelegate {
                 self.add(message: textMessage)
             }
         case .group:
-            if textMessage.receiverUid == currentGroup?.guid {
+            if textMessage.receiverUid == currentGroup?.guid && !isSortedByOldestMessage {
                 if enableSoundForMessages {
                     CometChatSoundManager().play(sound: .incomingMessage, customSound: customIncomingMessageSound)
                 }
