@@ -43,6 +43,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
     var limit: Int = 20
     var oldestMessageTimestamp: Int = 0
     var isSortedByOldestMessage: Bool = false
+    var isLifeMessagingUpdatesEnabled: Bool = true
     var searchKeyword: String = ""
     var status: CometChat.UserStatus = .offline
     var friendsOnly: Bool = false
@@ -99,6 +100,12 @@ public protocol CometChatMessageListDelegate: AnyObject {
     @objc public func set(sortByOldestMessages: Bool, fromTimestamp timestamp: Int) -> Self {
         self.isSortedByOldestMessage = sortByOldestMessages
         self.oldestMessageTimestamp = timestamp
+        return self
+    }
+    
+    @discardableResult
+    @objc public func set(isLifeMessagingUpdatesEnabled: Bool) -> Self {
+        self.isLifeMessagingUpdatesEnabled = isLifeMessagingUpdatesEnabled
         return self
     }
     
