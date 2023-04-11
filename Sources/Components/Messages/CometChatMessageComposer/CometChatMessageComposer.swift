@@ -48,8 +48,6 @@ public protocol MessageComposerHeightDelegate {
     @IBOutlet weak var editLineIndicator: UIView!
     
     public var composerHeightDelegate : MessageComposerHeightDelegate?
-    
-
 
     // MARK: - Declaration of Variables
     var currentTypingIndicator: TypingIndicator?
@@ -81,7 +79,7 @@ public protocol MessageComposerHeightDelegate {
     var excludeMessageTypes: [CometChatMessageTemplate] = []
     var customOutgoingMessageSound: URL?
     var enableSoundForMessages: Bool = true
-    var messageComposerMode: MessageComposerMode =  .draft
+    public var messageComposerMode: MessageComposerMode =  .draft
     var configuration: CometChatConfiguration?
     var configurations: [CometChatConfiguration]?
     let documentPicker: UIDocumentPickerViewController = UIDocumentPickerViewController(documentTypes: ["public.data","public.content","public.audiovisual-content","public.movie","public.audiovisual-content","public.video","public.audio","public.data","public.zip-archive","com.pkware.zip-archive","public.composite-content","public.text"], in: UIDocumentPickerMode.import)
