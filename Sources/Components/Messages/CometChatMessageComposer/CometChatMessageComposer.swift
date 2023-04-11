@@ -44,10 +44,10 @@ public protocol MessageComposerHeightDelegate {
     @IBOutlet weak var emoji: UIButton!
     @IBOutlet weak var send: UIButton!
     @IBOutlet weak var liveReaction: UIButton!
-    @IBOutlet weak var heightConstant: NSLayoutConstraint!
+    @IBOutlet public weak var heightConstant: NSLayoutConstraint!
     @IBOutlet weak var editLineIndicator: UIView!
     
-    var composerHeightDelegate : MessageComposerHeightDelegate?
+    public var composerHeightDelegate : MessageComposerHeightDelegate?
     
 
 
