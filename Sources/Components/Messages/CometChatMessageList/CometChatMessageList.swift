@@ -523,6 +523,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
                 }else{
                     strongSelf.tableView?.setEmptyMessage(strongSelf.emptyStateText ?? "", color: strongSelf.emptyStateTextColor, font: strongSelf.emptyStateTextFont)
                 }
+                strongSelf.tableView?.reloadData()
             }else{ strongSelf.tableView?.restore() }
         }
         let groupedMessages = Dictionary(grouping: messages) { (element) -> Date in
