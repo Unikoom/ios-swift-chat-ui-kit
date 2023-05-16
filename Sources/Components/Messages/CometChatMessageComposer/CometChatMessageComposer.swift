@@ -615,7 +615,7 @@ public protocol MessageComposerHeightDelegate {
 
         topView.roundViewCorners([.layerMinXMinYCorner,.layerMaxXMinYCorner], radius: 18)
         bottomView.roundViewCorners([.layerMinXMaxYCorner,.layerMaxXMaxYCorner], radius: 18)
-        topView.backgroundColor = CometChatTheme.palatte?.accent100
+        topView.backgroundColor = .white
         bottomView.backgroundColor = CometChatTheme.palatte?.accent100
         seperator.backgroundColor = CometChatTheme.palatte?.accent200
         editLineIndicator.backgroundColor = CometChatTheme.palatte?.accent600
