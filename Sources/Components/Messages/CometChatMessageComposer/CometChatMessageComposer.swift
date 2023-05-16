@@ -647,6 +647,7 @@ public protocol MessageComposerHeightDelegate {
     fileprivate func configureMessageComposer() {
         textView.layer.cornerRadius = 18
         textView.layer.borderWidth = 1.0
+        textView.contentInset = UIEdgeInsets(top: 8, left: 9, bottom: 8, right: 9)
         textView.layer.borderColor = UIColor.black.cgColor
         textView.backgroundColor = .white
         textView.delegate = self
