@@ -656,7 +656,7 @@ public protocol MessageComposerHeightDelegate {
 
         if #available(iOS 13.0, *) {
             let sendImage = UIImage(named: "message-composer-send.png", in: CometChatUIKit.bundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
-            send.setImage(sendImage, for: .normal)
+            // send.setImage(sendImage, for: .normal)
             send.tintColor = CometChatTheme.palatte?.primary
             self.contentView.backgroundColor = CometChatTheme.palatte?.background
         } else {}
