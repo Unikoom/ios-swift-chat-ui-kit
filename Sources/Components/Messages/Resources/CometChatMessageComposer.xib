@@ -152,10 +152,11 @@
                             </constraints>
                         </view>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-dO-xKt">
-                            <rect key="frame" x="6" y="6" width="25" height="30"/>
+                            <rect key="frame" x="9" y="4" width="32" height="32"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="MFl-jB-bJS"/>
+                                <constraint firstAttribute="width" secondItem="wys-dO-xKt" secondAttribute="height" multiplier="1:1" id="HeK-aO-hnD"/>
+                                <constraint firstAttribute="height" constant="32" id="MFl-jB-bJS"/>
                             </constraints>
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" image="message-composer-plus.png"/>
@@ -164,8 +165,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-YJ-UHF">
-                            <rect key="frame" x="542" y="12" width="24" height="24"/>
+                            <rect key="frame" x="534" y="4" width="32" height="32"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="rhO-YJ-UHF" secondAttribute="height" multiplier="1:1" id="4bf-pE-pwS"/>
+                                <constraint firstAttribute="width" constant="32" id="zew-z6-nNG"/>
+                            </constraints>
                             <state key="normal" image="message-composer-send.png"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="setCornerRadius">
@@ -177,20 +182,20 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-JJ-yHn">
-                            <rect key="frame" x="36" y="8" width="500" height="28"/>
+                            <rect key="frame" x="49" y="8" width="474" height="28"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-8y-bPT" customClass="GrowingTextView" customModule="CometChatUIKit">
-                                    <rect key="frame" x="5" y="0.0" width="490" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="474" height="28"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemFillColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="W8h-8y-bPT" secondAttribute="bottom" id="5fb-nq-deO"/>
                                 <constraint firstAttribute="height" constant="28" id="ES4-is-eXh"/>
                                 <constraint firstItem="W8h-8y-bPT" firstAttribute="top" secondItem="e9Z-JJ-yHn" secondAttribute="top" id="Pte-So-RUm"/>
-                                <constraint firstAttribute="trailing" secondItem="W8h-8y-bPT" secondAttribute="trailing" constant="5" id="ZT5-IQ-8yr"/>
-                                <constraint firstItem="W8h-8y-bPT" firstAttribute="leading" secondItem="e9Z-JJ-yHn" secondAttribute="leading" constant="5" id="jhB-dy-yCT"/>
+                                <constraint firstAttribute="trailing" secondItem="W8h-8y-bPT" secondAttribute="trailing" id="ZT5-IQ-8yr"/>
+                                <constraint firstItem="W8h-8y-bPT" firstAttribute="leading" secondItem="e9Z-JJ-yHn" secondAttribute="leading" id="jhB-dy-yCT"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -199,15 +204,15 @@
                         <constraint firstAttribute="trailing" secondItem="A6a-N7-Dvn" secondAttribute="trailing" constant="20" symbolic="YES" id="2Ir-hO-PmR"/>
                         <constraint firstItem="A6a-N7-Dvn" firstAttribute="top" secondItem="e9Z-JJ-yHn" secondAttribute="bottom" id="5LH-hK-1To"/>
                         <constraint firstItem="e9Z-JJ-yHn" firstAttribute="bottom" secondItem="wys-dO-xKt" secondAttribute="bottom" id="AFD-KN-Mms"/>
-                        <constraint firstItem="e9Z-JJ-yHn" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="36" id="GYr-CV-Scf"/>
-                        <constraint firstItem="wys-dO-xKt" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="6" id="HfC-n2-vB4"/>
+                        <constraint firstItem="e9Z-JJ-yHn" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="49" id="GYr-CV-Scf"/>
+                        <constraint firstItem="wys-dO-xKt" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="9" id="HfC-n2-vB4"/>
                         <constraint firstAttribute="trailing" secondItem="rhO-YJ-UHF" secondAttribute="trailing" constant="6" id="J3t-Wt-t0l"/>
                         <constraint firstItem="AJO-Oc-Byf" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="20" id="JHg-Zf-nND"/>
                         <constraint firstAttribute="bottom" secondItem="AJO-Oc-Byf" secondAttribute="bottom" constant="10" id="JVQ-DK-L5F"/>
                         <constraint firstAttribute="trailing" secondItem="AJO-Oc-Byf" secondAttribute="trailing" constant="20" id="Oyh-Tj-S6H"/>
                         <constraint firstItem="A6a-N7-Dvn" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="20" symbolic="YES" id="f42-DX-EW5"/>
                         <constraint firstItem="rhO-YJ-UHF" firstAttribute="bottom" secondItem="e9Z-JJ-yHn" secondAttribute="bottom" id="rlB-9X-ycG"/>
-                        <constraint firstAttribute="trailing" secondItem="e9Z-JJ-yHn" secondAttribute="trailing" constant="36" id="toi-kx-5AZ"/>
+                        <constraint firstAttribute="trailing" secondItem="e9Z-JJ-yHn" secondAttribute="trailing" constant="49" id="toi-kx-5AZ"/>
                         <constraint firstItem="AJO-Oc-Byf" firstAttribute="top" secondItem="A6a-N7-Dvn" secondAttribute="bottom" id="wad-CI-Afq"/>
                         <constraint firstItem="e9Z-JJ-yHn" firstAttribute="top" secondItem="0zE-kA-sqy" secondAttribute="top" constant="8" id="xxZ-ER-ZGO"/>
                     </constraints>
