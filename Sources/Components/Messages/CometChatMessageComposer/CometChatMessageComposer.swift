@@ -648,7 +648,7 @@ public protocol MessageComposerHeightDelegate {
         textView.layer.cornerRadius = 18
         textView.layer.borderWidth = 1.0
         textView.contentInset = UIEdgeInsets(top: 8, left: 9, bottom: 8, right: 9)
-        textView.layer.borderColor = UIColor.black.cgColor
+        textView.layer.borderColor = UIColor(red: 230.0/256.0, green: 230.0/256.0, blue: 230.0/256.0, alpha: 1.0).cgColor
         textView.backgroundColor = .white
         textView.delegate = self
         send.isHidden = false // true
