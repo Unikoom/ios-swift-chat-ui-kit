@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTB-02-HvD">
-                    <rect key="frame" x="0.0" y="66" width="572" height="60"/>
+                    <rect key="frame" x="0.0" y="57" width="572" height="60"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB8-Aa-LwW">
                             <rect key="frame" x="0.0" y="0.0" width="572" height="1"/>
@@ -102,17 +102,17 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zE-kA-sqy" customClass="CometChatGradientView" customModule="CometChatUIKit">
-                    <rect key="frame" x="0.0" y="126" width="572" height="47"/>
+                    <rect key="frame" x="0.0" y="117" width="572" height="56"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6a-N7-Dvn" userLabel="Separator View">
-                            <rect key="frame" x="20" y="36" width="532" height="1"/>
+                            <rect key="frame" x="20" y="45" width="532" height="1"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="4VG-72-Nf6"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJO-Oc-Byf">
-                            <rect key="frame" x="20" y="37" width="532" height="0.0"/>
+                            <rect key="frame" x="20" y="46" width="532" height="0.0"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8v2-gN-9d6">
                                     <rect key="frame" x="461" y="-12" width="61" height="24"/>
@@ -152,7 +152,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-dO-xKt">
-                            <rect key="frame" x="9" y="4" width="32" height="32"/>
+                            <rect key="frame" x="9" y="13" width="32" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wys-dO-xKt" secondAttribute="height" multiplier="1:1" id="HeK-aO-hnD"/>
@@ -165,7 +165,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-YJ-UHF">
-                            <rect key="frame" x="531" y="4" width="32" height="32"/>
+                            <rect key="frame" x="531" y="13" width="32" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="rhO-YJ-UHF" secondAttribute="height" multiplier="1:1" id="4bf-pE-pwS"/>
@@ -182,17 +182,17 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-JJ-yHn">
-                            <rect key="frame" x="49" y="8" width="474" height="28"/>
+                            <rect key="frame" x="49" y="8" width="474" height="37"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-8y-bPT" customClass="GrowingTextView" customModule="CometChatUIKit">
-                                    <rect key="frame" x="0.0" y="0.0" width="474" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="474" height="37"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="W8h-8y-bPT" secondAttribute="bottom" id="5fb-nq-deO"/>
-                                <constraint firstAttribute="height" constant="28" id="ES4-is-eXh"/>
+                                <constraint firstAttribute="height" constant="37" id="ES4-is-eXh"/>
                                 <constraint firstItem="W8h-8y-bPT" firstAttribute="top" secondItem="e9Z-JJ-yHn" secondAttribute="top" id="Pte-So-RUm"/>
                                 <constraint firstAttribute="trailing" secondItem="W8h-8y-bPT" secondAttribute="trailing" id="ZT5-IQ-8yr"/>
                                 <constraint firstItem="W8h-8y-bPT" firstAttribute="leading" secondItem="e9Z-JJ-yHn" secondAttribute="leading" id="jhB-dy-yCT"/>

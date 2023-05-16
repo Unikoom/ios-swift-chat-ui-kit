@@ -809,7 +809,7 @@ extension CometChatMessageComposer: GrowingTextViewDelegate {
 
     public func growingTextView(_ growingTextView: GrowingTextView, willChangeHeight height: CGFloat, difference: CGFloat) {
         self.heightConstant.constant = height
-        if self.heightConstant.constant > 49 {
+        if self.heightConstant.constant > 37 {
 
             self.composerHeightDelegate?.manageComposerHeight(increaseHeight: true, decreaseHeight: false)
         }else {
