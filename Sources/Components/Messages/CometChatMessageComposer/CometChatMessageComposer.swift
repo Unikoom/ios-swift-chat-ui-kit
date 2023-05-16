@@ -651,7 +651,7 @@ public protocol MessageComposerHeightDelegate {
         textView.layer.borderColor = UIColor(red: 230.0/256.0, green: 230.0/256.0, blue: 230.0/256.0, alpha: 1.0).cgColor
         textView.backgroundColor = .white
         textView.delegate = self
-        send.isHidden = false // true
+        send.isEnabled = false
         set(textFont: CometChatTheme.typography?.Body ?? UIFont.systemFont(ofSize: 17))
         set(textColor: CometChatTheme.palatte?.accent ?? .black)
 
@@ -840,13 +840,13 @@ extension CometChatMessageComposer: GrowingTextViewDelegate {
             if hideLiveReaction == false {
                 self.liveReaction.isHidden = false
             }
-            send.isHidden = true
+            send.isEnabled = false
         }else{
             if hideLiveReaction == false {
                 self.liveReaction.isHidden = true
             }
             if showSendButton {
-                send.isHidden = false
+                send.isEnabled = true
             }
         }
     }
