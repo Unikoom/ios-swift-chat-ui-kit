@@ -153,7 +153,7 @@
                         </view>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-dO-xKt">
                             <rect key="frame" x="9" y="4" width="32" height="32"/>
-                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wys-dO-xKt" secondAttribute="height" multiplier="1:1" id="HeK-aO-hnD"/>
                                 <constraint firstAttribute="height" constant="32" id="MFl-jB-bJS"/>
@@ -166,7 +166,7 @@
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-YJ-UHF">
                             <rect key="frame" x="531" y="4" width="32" height="32"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="rhO-YJ-UHF" secondAttribute="height" multiplier="1:1" id="4bf-pE-pwS"/>
                                 <constraint firstAttribute="width" constant="32" id="zew-z6-nNG"/>
@@ -414,12 +414,6 @@ AABRAAAAAAAAAAAAAAAAAAAlDQ
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
