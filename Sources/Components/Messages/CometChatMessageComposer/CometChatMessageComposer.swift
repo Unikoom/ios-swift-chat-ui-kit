@@ -645,9 +645,12 @@ public protocol MessageComposerHeightDelegate {
     }
 
     fileprivate func configureMessageComposer() {
-        textView.layer.cornerRadius = 20
+        textView.layer.cornerRadius = 18
+        textView.layer.borderWidth = 1.0
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.backgroundColor = .white
         textView.delegate = self
-        send.isHidden = true
+        send.isHidden = false // true
         set(textFont: CometChatTheme.typography?.Body ?? UIFont.systemFont(ofSize: 17))
         set(textColor: CometChatTheme.palatte?.accent ?? .black)
 
