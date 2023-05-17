@@ -58,7 +58,7 @@ public protocol MessageComposerHeightDelegate {
     var curentLocation: CLLocation?
     let locationManager = CLLocationManager()
     var actionItems: [ActionItem] = [ActionItem]()
-    weak var controller: UIViewController?
+//    weak var controller: UIViewController?
     var enableTypingIndicator: Bool = true
     var placeholderText: String = "TYPE_A_MESSAGE".localize()
     var placeholderFont: UIFont =  CometChatTheme.typography?.Name2 ?? UIFont.systemFont(ofSize: 17)
@@ -89,6 +89,9 @@ public protocol MessageComposerHeightDelegate {
         let rowVC: PanModalPresentable.LayoutType = CometChatActionSheet()
     }
 
+    var controller: UIViewController? {
+        return getVisibleViewController()
+    }
 
     @discardableResult
     @objc public func set(messageTypes: [CometChatMessageTemplate]?) -> Self {
@@ -466,7 +469,7 @@ public protocol MessageComposerHeightDelegate {
 
     @discardableResult
     @objc public func set(controller: UIViewController) -> CometChatMessageComposer {
-        self.controller = controller
+//        self.controller = controller
         return self
     }
 
@@ -729,6 +732,23 @@ public protocol MessageComposerHeightDelegate {
         let emojiKeyboard = CometChatEmojiKeyboard()
         controller?.presentPanModal(emojiKeyboard, backgroundColor: CometChatTheme.palatte?.background)
     }
+    
+    func getVisibleViewController() -> UIViewController? {
+        if let keyWindow = UIApplication.shared.keyWindow,
+            let rootViewController = keyWindow.rootViewController as? UITabBarController,
+            let selectedNavController = rootViewController.selectedViewController as? UINavigationController {
+            
+            var visibleViewController = selectedNavController.topViewController
+            
+            while let presentedViewController = visibleViewController?.presentedViewController {
+                visibleViewController = presentedViewController
+            }
+            
+            return visibleViewController
+        }
+        
+        return nil
+    }
 
 
     @IBAction func onAttachmentClick(_ sender: Any) {
@@ -739,9 +759,10 @@ public protocol MessageComposerHeightDelegate {
         let group: CometChatActionPresentable = CometChatMessageActionsGroup()
 
         (group.rowVC as? CometChatActionSheet)?.set(layoutMode: .listMode).set(actionItems: actionItems)
-        if let controller = controller {
-            controller.presentPanModal(group.rowVC, backgroundColor:  CometChatTheme.palatte?.secondary)
-        }
+        getVisibleViewController()?.presentPanModal(group.rowVC, backgroundColor:  CometChatTheme.palatte?.secondary)
+//        if let controller = controller {
+//            controller.presentPanModal(group.rowVC, backgroundColor:  CometChatTheme.palatte?.secondary)
+//        }
         self.actionItems.removeAll()
     }
 
