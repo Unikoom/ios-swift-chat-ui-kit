@@ -151,8 +151,8 @@
                                 <constraint firstItem="8v2-gN-9d6" firstAttribute="centerY" secondItem="AJO-Oc-Byf" secondAttribute="centerY" id="bIr-WK-khe"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-dO-xKt">
-                            <rect key="frame" x="9" y="13" width="32" height="32"/>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-dO-xKt" userLabel="Attachments Button">
+                            <rect key="frame" x="9" y="11" width="32" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wys-dO-xKt" secondAttribute="height" multiplier="1:1" id="HeK-aO-hnD"/>
@@ -164,8 +164,8 @@
                                 <action selector="onAttachmentClick:" destination="-1" eventType="touchUpInside" id="3CN-1O-RqD"/>
                             </connections>
                         </button>
-                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-YJ-UHF">
-                            <rect key="frame" x="531" y="13" width="32" height="32"/>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-YJ-UHF" userLabel="Send Button">
+                            <rect key="frame" x="531" y="11" width="32" height="32"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="rhO-YJ-UHF" secondAttribute="height" multiplier="1:1" id="4bf-pE-pwS"/>
@@ -181,7 +181,7 @@
                                 <action selector="onSendClick:" destination="-1" eventType="touchUpInside" id="niw-dY-Ilp"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-JJ-yHn">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-JJ-yHn" userLabel="Top View">
                             <rect key="frame" x="49" y="8" width="474" height="37"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-8y-bPT" customClass="GrowingTextView" customModule="CometChatUIKit">
@@ -201,9 +201,10 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="rhO-YJ-UHF" firstAttribute="bottom" secondItem="e9Z-JJ-yHn" secondAttribute="bottom" constant="-2" id="0na-YZ-6zM"/>
                         <constraint firstAttribute="trailing" secondItem="A6a-N7-Dvn" secondAttribute="trailing" constant="20" symbolic="YES" id="2Ir-hO-PmR"/>
                         <constraint firstItem="A6a-N7-Dvn" firstAttribute="top" secondItem="e9Z-JJ-yHn" secondAttribute="bottom" id="5LH-hK-1To"/>
-                        <constraint firstItem="e9Z-JJ-yHn" firstAttribute="bottom" secondItem="wys-dO-xKt" secondAttribute="bottom" id="AFD-KN-Mms"/>
+                        <constraint firstItem="e9Z-JJ-yHn" firstAttribute="bottom" secondItem="wys-dO-xKt" secondAttribute="bottom" constant="2" id="AFD-KN-Mms"/>
                         <constraint firstItem="e9Z-JJ-yHn" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="49" id="GYr-CV-Scf"/>
                         <constraint firstItem="wys-dO-xKt" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="9" id="HfC-n2-vB4"/>
                         <constraint firstAttribute="trailing" secondItem="rhO-YJ-UHF" secondAttribute="trailing" constant="9" id="J3t-Wt-t0l"/>
@@ -211,7 +212,6 @@
                         <constraint firstAttribute="bottom" secondItem="AJO-Oc-Byf" secondAttribute="bottom" constant="10" id="JVQ-DK-L5F"/>
                         <constraint firstAttribute="trailing" secondItem="AJO-Oc-Byf" secondAttribute="trailing" constant="20" id="Oyh-Tj-S6H"/>
                         <constraint firstItem="A6a-N7-Dvn" firstAttribute="leading" secondItem="0zE-kA-sqy" secondAttribute="leading" constant="20" symbolic="YES" id="f42-DX-EW5"/>
-                        <constraint firstItem="rhO-YJ-UHF" firstAttribute="bottom" secondItem="e9Z-JJ-yHn" secondAttribute="bottom" id="rlB-9X-ycG"/>
                         <constraint firstAttribute="trailing" secondItem="e9Z-JJ-yHn" secondAttribute="trailing" constant="49" id="toi-kx-5AZ"/>
                         <constraint firstItem="AJO-Oc-Byf" firstAttribute="top" secondItem="A6a-N7-Dvn" secondAttribute="bottom" id="wad-CI-Afq"/>
                         <constraint firstItem="e9Z-JJ-yHn" firstAttribute="top" secondItem="0zE-kA-sqy" secondAttribute="top" constant="8" id="xxZ-ER-ZGO"/>
