@@ -906,7 +906,7 @@ extension CometChatMessageComposer {
                 CometChat.sendTextMessage(message: textMessage) { updatedTextMessage in
                     DispatchQueue.main.async { [weak self] in
                         guard let strongSelf = self else { return }
-                        strongSelf.send.isEnabled = true
+                        strongSelf.send.isEnabled = false
                         CometChatMessageEvents.emitOnMessageSent(message: updatedTextMessage, status: .success)
 
 
