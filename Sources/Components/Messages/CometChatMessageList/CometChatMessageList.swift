@@ -416,6 +416,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
               
               self.messageTypes = [UIKitConstants.MessageTypeConstants.text,
                                    UIKitConstants.MessageTypeConstants.image,
+                                   UIKitConstants.MessageTypeConstants.video,
                                    UIKitConstants.MessageTypeConstants.text,
                                    UIKitConstants.MessageTypeConstants.audio,
                                    UIKitConstants.MessageTypeConstants.file,
