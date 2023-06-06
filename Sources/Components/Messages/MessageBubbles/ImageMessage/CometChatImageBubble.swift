@@ -24,7 +24,28 @@ public class CometChatImageBubble: UIView {
     private var imageRequest: Cancellable?
     private lazy var imageService = ImageService()
     
-    var controller: UIViewController?
+//    var controller: UIViewController?
+    
+    var controller: UIViewController? {
+        return getVisibleViewController()
+    }
+    
+    func getVisibleViewController() -> UIViewController? {
+            if let keyWindow = UIApplication.shared.keyWindow,
+                let rootViewController = keyWindow.rootViewController as? UITabBarController,
+                let selectedNavController = rootViewController.selectedViewController as? UINavigationController {
+                
+                var visibleViewController = selectedNavController.topViewController
+                
+                while let presentedViewController = visibleViewController?.presentedViewController {
+                    visibleViewController = presentedViewController
+                }
+                
+                return visibleViewController
+            }
+            
+            return nil
+        }
     
     // MARK: - Initializers
     
@@ -35,7 +56,7 @@ public class CometChatImageBubble: UIView {
     
     @discardableResult
     public func set(controller: UIViewController) -> Self {
-        self.controller = controller
+//        self.controller = controller
         return self
     }
     
