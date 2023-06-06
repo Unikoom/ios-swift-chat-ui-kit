@@ -21,9 +21,29 @@ public class CometChatVideoBubble: UIView {
     private lazy var imageService = ImageService()
     
     // MARK: - Initializers
-    var controller: UIViewController?
+//    var controller: UIViewController?
     var mediaMessage: MediaMessage?
     
+    var controller: UIViewController? {
+        return getVisibleViewController()
+    }
+    
+    func getVisibleViewController() -> UIViewController? {
+        if let keyWindow = UIApplication.shared.keyWindow,
+            let rootViewController = keyWindow.rootViewController as? UITabBarController,
+            let selectedNavController = rootViewController.selectedViewController as? UINavigationController {
+            
+            var visibleViewController = selectedNavController.topViewController
+            
+            while let presentedViewController = visibleViewController?.presentedViewController {
+                visibleViewController = presentedViewController
+            }
+            
+            return visibleViewController
+        }
+        return nil
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -129,7 +149,7 @@ public class CometChatVideoBubble: UIView {
     
     @discardableResult
     public func set(controller: UIViewController) -> Self {
-        self.controller = controller
+//        self.controller = controller
         return self
     }
     
