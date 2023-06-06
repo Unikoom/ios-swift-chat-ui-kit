@@ -171,7 +171,7 @@ public class CometChatImageBubble: UIView {
     private func parseThumbnailForImage(forMessage: MediaMessage?) {
         imageThumbnail.image = nil
         if let metaData = forMessage?.metaData , let injected = metaData["@injected"] as? [String : Any], let cometChatExtension =  injected[ExtensionConstants.extensions] as? [String : Any], let thumbnailGenerationDictionary = cometChatExtension[ExtensionConstants.thumbnailGeneration] as? [String : Any] {
-            if let url = URL(string: thumbnailGenerationDictionary["url_medium"] as? String ?? "") {
+            if let url = URL(string: thumbnailGenerationDictionary["url_large"] as? String ?? "") {
                 imageRequest = imageService.image(for: url) { [weak self] image in
                     guard let strongSelf = self else { return }
                     // Update Thumbnail Image View
