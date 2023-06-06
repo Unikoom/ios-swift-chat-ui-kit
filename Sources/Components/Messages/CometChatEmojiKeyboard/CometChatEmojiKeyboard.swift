@@ -140,6 +140,7 @@ extension CometChatEmojiKeyboard: UICollectionViewDelegate, UICollectionViewData
             let index = IndexPath(row: emojiCategories.count - 1, section: indexPath.row)
             emojiCollectionView.scrollToItem(at: index, at: .centeredVertically, animated: true)
         }
+        dismiss(animated: true)
         
     }
     
