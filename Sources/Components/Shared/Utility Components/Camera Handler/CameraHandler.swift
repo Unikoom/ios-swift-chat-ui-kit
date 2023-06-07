@@ -128,6 +128,27 @@ extension CameraHandler: UIImagePickerControllerDelegate, UINavigationController
         return nil
     }
     
+    func getAllMetadata(from image: UIImage) -> [String: Any]? {
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+            return nil
+        }
+        
+        guard let imageSource = CGImageSourceCreateWithData(imageData as CFData, nil) else {
+            return nil
+        }
+        
+        guard let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as? [String: Any] else {
+            return nil
+        }
+        
+        for (key, value) in imageProperties {
+                    print("\(key): \(value)")
+                }
+        
+        return imageProperties
+    }
+
+    
 }
 
 
