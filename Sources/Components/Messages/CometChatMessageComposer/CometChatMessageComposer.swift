@@ -980,7 +980,7 @@ extension CometChatMessageComposer {
         if let mediaMessage = mediaMessage {
             CometChatMessageEvents.emitOnMessageSent(message: mediaMessage, status: .inProgress)
             CometChat.sendMediaMessage(message: mediaMessage) { updatedMediaMessage in
-                if mediaMessage.messageType == .video && updatedMediaMessage.metaData != nil {
+                if (mediaMessage.messageType == .video && updatedMediaMessage.metaData != nil) || mediaMessage.messageType == .image {
                     CometChatMessageEvents.emitOnMessageSent(message: updatedMediaMessage, status: .success)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                         CometChatMessageEvents.emitOnMessageSent(message: updatedMediaMessage, status: .success)
