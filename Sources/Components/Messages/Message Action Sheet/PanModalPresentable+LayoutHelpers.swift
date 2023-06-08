@@ -40,6 +40,7 @@ extension PanModalPresentable where Self: UIViewController {
      */
     var bottomLayoutOffset: CGFloat {
 
+       return 70
        guard let rootVC = rootViewController
             else { return 0}
 
