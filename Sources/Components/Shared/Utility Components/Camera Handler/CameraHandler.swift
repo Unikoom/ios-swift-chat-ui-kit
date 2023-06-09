@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class CameraHandler: NSObject{
     static let shared = CameraHandler()
@@ -30,16 +31,50 @@ class CameraHandler: NSObject{
         
     }
     
+    let myPickerController = UIImagePickerController()
+    
     func presentPhotoLibrary(for view: UIViewController)
     {
         currentVC = view
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            let myPickerController = UIImagePickerController()
-            myPickerController.delegate = self;
-            myPickerController.sourceType = .photoLibrary
-            myPickerController.mediaTypes = ["public.image", "public.movie"]
-            currentVC.present(myPickerController, animated: true, completion: nil)
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            DispatchQueue.main.async { [weak self] in // wrap UI updates in a main thread block
+                guard let self = self else { return }
+                self.myPickerController.delegate = self;
+                self.myPickerController.sourceType = .photoLibrary
+                self.myPickerController.mediaTypes = ["public.image", "public.movie"]
+                self.currentVC.present(self.myPickerController, animated: true, completion: nil)
+            }
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({ [weak self] newStatus in
+                if newStatus == PHAuthorizationStatus.authorized {
+                    DispatchQueue.main.async { [weak self] in // wrap UI updates in a main thread block
+                        guard let self = self else { return }
+                        self.myPickerController.delegate = self;
+                        self.myPickerController.sourceType = .photoLibrary
+                        self.myPickerController.mediaTypes = ["public.image", "public.movie"]
+                        self.currentVC.present(self.myPickerController, animated: true, completion: nil)
+                    }
+                } else {
+                    self?.showPermissionAlert(title: "Access Denied", message: "Please grant access to your photo library in Settings")
+                }
+            })
+        default:
+            showPermissionAlert(title: "Access Denied", message: "Please grant access to your photo library in Settings")
         }
+    }
+    
+    func showPermissionAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+        currentVC.present(alertController, animated: true, completion: nil)
     }
     
     func showActionSheet(vc: UIViewController) {
