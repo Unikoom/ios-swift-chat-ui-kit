@@ -598,7 +598,9 @@ public protocol MessageComposerHeightDelegate {
             addSubview(contentView)
         }
         configureMessageComposer()
-        locationAuthStatus()
+        /*
+         locationAuthStatus()
+         */
         setupDelegates()
         setupAppearace()
         CometChatActionSheet.actionsSheetDelegate = self
