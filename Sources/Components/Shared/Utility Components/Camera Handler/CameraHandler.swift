@@ -66,15 +66,17 @@ class CameraHandler: NSObject{
     }
     
     func showPermissionAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
-            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        DispatchQueue.main.async { [weak self] in
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+                guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(settingsAction)
+            alertController.addAction(cancelAction)
+            self?.currentVC.present(alertController, animated: true, completion: nil)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(settingsAction)
-        alertController.addAction(cancelAction)
-        currentVC.present(alertController, animated: true, completion: nil)
     }
     
     func showActionSheet(vc: UIViewController) {
