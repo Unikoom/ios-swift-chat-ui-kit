@@ -402,16 +402,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
                   
                     if let excludedMessageOptions = excludedMessageOptions {
                         var currentExcludedOptions = Array(Set(messageOptions).subtracting(excludedMessageOptions ?? []))
-                        let reportOption = CometChatMessageOption(id: "report_message_custom", title: "Report", image: UIImage(systemName: "heart.fill")!, optionFor: OptionFor.both, onClick: { message in
-                            print("REPORT, \(message?.id ?? 0)")
-                            CometChat.callExtension(slug: "report-message", type: .post, endPoint: "v1/report", body: [
-                              "msgId": 123,
-                              "reason":"Contains profanity"
-                            ] as [String : Any], onSuccess: { (response) in
-                                     // Success
-                                  }) { (error) in
-                                     // Error occured
-                                  }
+                        let reportOption = CometChatMessageOption(id: "report_message", title: "Report", image: UIImage(systemName: "exclamationmark.bubble")!, optionFor: OptionFor.both, onClick: { message in
                         })
                         currentExcludedOptions.append(reportOption)
                         self.messageOptions.append(with: [template.type : currentExcludedOptions])
