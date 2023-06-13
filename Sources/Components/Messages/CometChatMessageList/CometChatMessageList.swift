@@ -401,7 +401,7 @@ public protocol CometChatMessageListDelegate: AnyObject {
                 if let messageOptions = template.options {
                   
                     if let excludedMessageOptions = excludedMessageOptions {
-                        let currentExcludedOptions = Array(Set(messageOptions).subtracting(excludedMessageOptions ?? []))
+                        var currentExcludedOptions = Array(Set(messageOptions).subtracting(excludedMessageOptions ?? []))
                         let reportOption = CometChatMessageOption(id: "report_message_custom", title: "Report", image: UIImage(systemName: "heart.fill")!, optionFor: OptionFor.both, onClick: { message in
                             print("REPORT, \(message?.id ?? 0)")
                             CometChat.callExtension(slug: "report-message", type: .post, endPoint: "v1/report", body: [
