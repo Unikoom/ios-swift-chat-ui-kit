@@ -402,6 +402,10 @@ public protocol CometChatMessageListDelegate: AnyObject {
                   
                     if let excludedMessageOptions = excludedMessageOptions {
                         let currentExcludedOptions = Array(Set(messageOptions).subtracting(excludedMessageOptions ?? []))
+                        let reportOption = CometChatMessageOption(id: "report_message_custom", title: "Report", image: UIImage(systemName: "heart.fill")!, optionFor: OptionFor.both, onClick: { message in
+                            print("REPORT, \(message?.id ?? 0)")
+                        })
+                        currentExcludedOptions.append(reportOption)
                         self.messageOptions.append(with: [template.type : currentExcludedOptions])
                     }else{
                         self.messageOptions.append(with: [template.type : messageOptions])
@@ -409,8 +413,8 @@ public protocol CometChatMessageListDelegate: AnyObject {
                 }
             }
           }else{
-              self.messageCategories =
-                                    [UIKitConstants.MessageCategoryConstants.message,               UIKitConstants.MessageCategoryConstants.custom,
+              self.messageCategories = [UIKitConstants.MessageCategoryConstants.message,
+                                        UIKitConstants.MessageCategoryConstants.custom,
                                         UIKitConstants.MessageCategoryConstants.call,
                                         UIKitConstants.MessageCategoryConstants.action]
               
